@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +13,9 @@ class Home extends StatelessWidget {
         actions: <Widget>[
           FlatButton.icon(
             onPressed: () async {
+              loading = true;
               await _auth.signOut();
+              loading=false;
             },
             label: Text('Logout'),
             icon: Icon(Icons.exit_to_app),
