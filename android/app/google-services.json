@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "435073326192",
+    "firebase_url": "https://bee-tydxxr.firebaseio.com",
+    "project_id": "bee-tydxxr",
+    "storage_bucket": "bee-tydxxr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435073326192:android:1ae8bc75cf489f9aff68b5",
+        "android_client_info": {
+          "package_name": "com.fake.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435073326192-b1c832ro112305k4ik6qfpgm2e0u6lp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWGMpBYUXo1nSwVpuQY9n8bfJwB1SCYQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435073326192-b1c832ro112305k4ik6qfpgm2e0u6lp0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
