@@ -19,10 +19,14 @@ class _RegisterState extends State<Register> {
   //text field state
   String email = '';
   String password = '';
+  String username = '';
+  String fisrtName = '';
+  String lastName = '';
   String error = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Sign up'),
         elevation: 0,
@@ -42,6 +46,37 @@ class _RegisterState extends State<Register> {
           key: _formkey,
           child: Column(
             children: <Widget>[
+              SizedBox(height: 20),
+              TextFormField(
+                onChanged: (value) {
+                  setState(() {
+                    fisrtName = value;
+                  });
+                },
+                validator: (value) => value.isEmpty ? 'Enter a first name' : null,
+                decoration:
+                    textInputDecoration.copyWith(hintText: 'First Name'),
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                onChanged: (value) {
+                  setState(() {
+                    lastName = value;
+                  });
+                },
+                validator: (value) => value.isEmpty ? 'Enter a last name' : null,
+                decoration: textInputDecoration.copyWith(hintText: 'Last Name'),
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                onChanged: (value) {
+                  setState(() {
+                    username = value;
+                  });
+                },
+                validator: (value) => value.isEmpty ? 'Enter a username' : null,
+                decoration: textInputDecoration.copyWith(hintText: 'Username'),
+              ),
               SizedBox(height: 20),
               TextFormField(
                 onChanged: (value) {
@@ -72,10 +107,10 @@ class _RegisterState extends State<Register> {
                       loading = true;
                     });
                     dynamic result = await _auth.registerWithEmailAndPasswors(
-                        email, password);
+                        email, password, username, fisrtName, lastName);
                     if (result == null) {
                       setState(() {
-                        error = 'please supply a valid email';
+                        error = 'Please supply a valid email';
                         loading = false;
                       });
                     }

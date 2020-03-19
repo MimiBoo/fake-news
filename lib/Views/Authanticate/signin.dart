@@ -82,7 +82,7 @@ class _SignInState extends State<SignIn> {
                               .signInWithEmailAndPassword(email, password);
                           if (result == null) {
                             setState(() {
-                              error = 'please supply a valid email';
+                              error = 'Please supply a valid email';
                               loading = false;
                             });
                           }
